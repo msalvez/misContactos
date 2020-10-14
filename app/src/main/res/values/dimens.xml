@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="nombre_contacto">28dp</dimen>
+    <dimen name="estandar">20dp</dimen>
+    <dimen name="superior">10dp</dimen>
+    <dimen name="radio">4dp</dimen>
+    <dimen name="elevation">4dp</dimen>
+    <dimen name="cvnombre">10sp</dimen>
+</resources>

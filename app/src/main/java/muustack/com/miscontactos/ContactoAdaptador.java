@@ -50,7 +50,6 @@ public class ContactoAdaptador extends RecyclerView.Adapter<ContactoAdaptador.Co
                 Intent intent = new Intent(activity, DetalleContacto.class);
                 intent.putExtra("Nombre", contacto.getNombre());
                 intent.putExtra("Telefono", contacto.getTelefono());
-                intent.putExtra("Email", contacto.getEmail());
                 activity.startActivity(intent);
             }
         });
@@ -81,7 +80,7 @@ public class ContactoAdaptador extends RecyclerView.Adapter<ContactoAdaptador.Co
 
             imgContact = (ImageView) itemView.findViewById(R.id.imgContact);
             nombreContacto = (TextView) itemView.findViewById(R.id.nombreContacto);
-            telefonoContacto = (TextView) itemView.findViewById(R.id.telefonoContacto);
+            telefonoContacto = (TextView) itemView.findViewById(R.id.likes);
             btnLike = (ImageButton) itemView.findViewById(R.id.btnLike);
 
         }

@@ -7,7 +7,7 @@
     android:orientation="vertical"
     android:paddingBottom="10dp"
     tools:context=".DetalleContacto">
-    <include android:id="@+id/miActionBar" layout="@layout/actionbar"></include>
+    <include android:id="@+id/back" layout="@layout/actionbar"></include>
 
     <TextView
         android:id="@+id/textViewNombre"
@@ -27,14 +27,13 @@
         android:orientation="horizontal"
         android:layout_marginTop="@dimen/superior"
         android:paddingLeft="34dp"
-        android:onClick="llamar"
         >
 
         <ImageView
             android:id="@+id/imageView"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            app:srcCompat="@drawable/telefono" />
+            app:srcCompat="@drawable/bonecolor" />
 
         <TextView
             android:id="@+id/textViewTelefono"
@@ -44,32 +43,6 @@
             android:layout_gravity="center_vertical"
             android:paddingLeft="@dimen/estandar"
             android:textSize="@dimen/estandar"/>
-
-    </LinearLayout>
-
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        android:layout_marginTop="@dimen/superior"
-        android:paddingLeft="34dp"
-        android:onClick="enviarMail"
-        >
-
-        <ImageView
-            android:id="@+id/imageViewEmail"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            app:srcCompat="@drawable/email" />
-        <TextView
-            android:id="@+id/textViewEmail"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="@string/email"
-            android:layout_gravity="center_vertical"
-            android:paddingLeft="@dimen/estandar"
-            android:textSize="@dimen/estandar"
-            />
 
     </LinearLayout>
 

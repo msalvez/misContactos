@@ -10,6 +10,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
+import android.widget.ImageButton;
 import android.widget.ListView;
 import android.widget.Toolbar;
 
@@ -26,38 +27,17 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-
         listaContactos = (RecyclerView) findViewById(R.id.rvContactos);
-
-       /*LinearLayoutManager llm = new LinearLayoutManager(this);
-        llm.setOrientation(LinearLayoutManager.VERTICAL);*/
+        Toolbar miActionBar = (Toolbar) findViewById(R.id.miActionBar);
+        setSupportActionBar(miActionBar);
 
         GridLayoutManager glm = new GridLayoutManager(this,2);
-
         listaContactos.setLayoutManager(glm);
+
         inicializarListaDeContactos();
         inicializarAdaptador();
-
-        /*ArrayList<String> nombresContacto = new ArrayList<>();
-        for (Contacto contacto : contactos) {
-            nombresContacto.add(contacto.getNombre());
-        }*/
-
-        /*ListView lstContactos = (ListView) findViewById(R.id.contactos);
-        lstContactos.setAdapter(new ArrayAdapter<String>(this, android.R.layout.simple_list_item_1, nombresContacto));
-
-        lstContactos.setOnItemClickListener(new AdapterView.OnItemClickListener() {
-            @Override
-            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-                Intent intent = new Intent(MainActivity.this, DetalleContacto.class);
-                intent.putExtra("Nombre",contactos.get(position).getNombre());
-                intent.putExtra("Telefono",contactos.get(position).getTelefono());
-                intent.putExtra("Email",contactos.get(position).getEmail());
-                startActivity(intent);
-                finish();
-            }
-        }); */
     }
+
     public ContactoAdaptador adaptador;
     private void inicializarAdaptador(){
         adaptador = new ContactoAdaptador(contactos, this);
@@ -67,13 +47,22 @@ public class MainActivity extends AppCompatActivity {
     private void setSupportActionBar(Toolbar miActionBar) {
     }
 
+
     public void inicializarListaDeContactos(){
         contactos = new ArrayList<Contacto>();
 
-        contactos.add(new Contacto(R.drawable.images2,"Mathias Alvez", "092564184", "mathias@mathias.com"));
-        contactos.add(new Contacto(R.drawable.images3,"Pepe Reina", "099123456", "pepe@gmail.com"));
-        contactos.add(new Contacto(R.drawable.images4,"Cristina Ronalda", "099777000", "cr7@gmail.com"));
-        contactos.add(new Contacto(R.drawable.descarga,"Lionela Messi", "099101010", "leo10@gmail.com"));
-        contactos.add(new Contacto(R.drawable.images,"Luis Suarez", "099999999", "pistolero@gmail.com"));
+        contactos.add(new Contacto(R.drawable.perro7,"pepe", "0"));
+        contactos.add(new Contacto(R.drawable.perro1,"Malebo", "4"));
+        contactos.add(new Contacto(R.drawable.perro4,"Rico", "5"));
+        contactos.add(new Contacto(R.drawable.perro2,"Bestia", "6"));
+        contactos.add(new Contacto(R.drawable.perro3,"Coki", "8"));
+        contactos.add(new Contacto(R.drawable.perro5,"Yimbo", "1"));
     }
+
+    public void getList(View v){
+        Intent intent = new Intent(MainActivity.this, Favoritos.class);
+        startActivity(intent);
+    }
+
+
 }

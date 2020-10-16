@@ -13,7 +13,6 @@ public class DetalleContacto extends AppCompatActivity {
 
     private TextView textViewNombre;
     private TextView textViewTelefono;
-    private TextView textViewEmail;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -23,16 +22,13 @@ public class DetalleContacto extends AppCompatActivity {
         Bundle parametros = getIntent().getExtras();
         String nombre = parametros.getString("Nombre");
         String telefono = parametros.getString("Telefono");
-        String email = parametros.getString("Email");
 
         textViewNombre = (TextView) findViewById(R.id.textViewNombre);
         textViewTelefono = (TextView) findViewById(R.id.textViewTelefono);
-        textViewEmail = (TextView) findViewById(R.id.textViewEmail);
 
 
         textViewNombre.setText(nombre);
         textViewTelefono.setText(telefono);
-        textViewEmail.setText(email);
 
     }
 
@@ -41,14 +37,6 @@ public class DetalleContacto extends AppCompatActivity {
         startActivity(new Intent(Intent.ACTION_DIAL, Uri.parse("tel:" + telefono)));
     }
 
-    public void enviarMail(View v){
-        String email = textViewEmail.getText().toString();
-        Intent emailIntent = new Intent(Intent.ACTION_SEND);
-        emailIntent.setData(Uri.parse("mailto:"));
-        emailIntent.putExtra(Intent.EXTRA_EMAIL, email);
-        emailIntent.setType("message/rfc822");
-        startActivity(Intent.createChooser(emailIntent, "Email "));
-    }
 
     @Override
     public boolean onKeyDown(int keyCode, KeyEvent event){

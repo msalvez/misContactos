@@ -1,9 +1,9 @@
 <resources>
-    <string name="app_name">Contactos</string>
-    <string name="nombre">Mathias Alvez</string>
+    <string name="app_name">Petagram</string>
+    <string name="nombre">Mathias</string>
     <string name="telefono">099123456</string>
     <string name="email">mathias@mathias.com</string>
     <string name="pnombre">Nombre:</string>
-    <string name="ptelefono">Telefono:</string>
+    <string name="plikes">5</string>
     <string name="pemail">E-mail:</string>
 </resources>
